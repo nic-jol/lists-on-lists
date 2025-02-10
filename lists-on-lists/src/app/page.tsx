@@ -18,12 +18,12 @@ export default function Home() {
 
     function addToTvList(){
         const newTelevisionShow = 'Cop Show #' + televisionShows.length
-        setMovies([...televisionShows, newTelevisionShow])
+        setTelevisionShows([...televisionShows, newTelevisionShow])
     }
 
     function addToVideoGamesList(){
         const newVideoGame = 'Halo ' + videoGames.length
-        setMovies([...videoGames, newVideoGame])
+        setVideoGames([...videoGames, newVideoGame])
     }
 
     return (
