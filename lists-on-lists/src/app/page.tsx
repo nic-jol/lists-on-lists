@@ -11,25 +11,38 @@ export default function Home() {
     const [televisionShows, setTelevisionShows] = useState(['Pushing Daisies', 'Elsbeth', 'Murdoch Mysteries'])
     const [videoGames, setVideoGames] = useState(['Journey', 'Stardew Valley', 'Animal Crossing'])
 
-    function addToMovieList(event: React.FormEvent<HTMLFormElement>){
+    function addToMovieList(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const newMovie = (event.currentTarget[0] as HTMLInputElement).value;
-        (event.currentTarget[0] as HTMLInputElement).value = '';
-        setMovies([...movies, newMovie])
+
+        if (validListItem(newMovie)) {
+            (event.currentTarget[0] as HTMLInputElement).value = '';
+            setMovies([...movies, newMovie])
+        }
     }
 
-    function addToTvList(event: React.FormEvent<HTMLFormElement>){
+    function addToTvList(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const newTelevisionShow = (event.currentTarget[0] as HTMLInputElement).value;
-        (event.currentTarget[0] as HTMLInputElement).value = '';
-        setTelevisionShows([...televisionShows, newTelevisionShow])
+
+        if (validListItem(newTelevisionShow)) {
+            (event.currentTarget[0] as HTMLInputElement).value = '';
+            setTelevisionShows([...televisionShows, newTelevisionShow])
+        }
     }
 
-    function addToVideoGamesList(event: React.FormEvent<HTMLFormElement>){
+    function addToVideoGamesList(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const newVideoGame = (event.currentTarget[0] as HTMLInputElement).value;
-        (event.currentTarget[0] as HTMLInputElement).value = '';
-        setVideoGames([...videoGames, newVideoGame])
+
+        if (validListItem(newVideoGame)) {
+            (event.currentTarget[0] as HTMLInputElement).value = '';
+            setVideoGames([...videoGames, newVideoGame])
+        }
+    }
+
+    function validListItem(newItem: string) {
+        return newItem && newItem.trim().length;
     }
 
     return (
@@ -40,9 +53,9 @@ export default function Home() {
             </div>
             <div className={styles.column}>
                 <h2>Movies</h2>
-                <StringList 
-                items={movies} 
-                addToList={addToMovieList}
+                <StringList
+                    items={movies}
+                    addToList={addToMovieList}
                 />
             </div>
             <div className={styles.column}>
