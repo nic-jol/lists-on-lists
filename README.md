@@ -10,3 +10,8 @@ Then, navigate to http://localhost:3000
 
 To set up your own Next.js project:
 > npx create-next-app@latest
+
+
+
+Notes
+ ...spread notation
