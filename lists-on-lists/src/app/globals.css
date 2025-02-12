@@ -35,6 +35,13 @@ a {
   text-decoration: none;
 }
 
+ul,li { 
+  list-style-type: none;
+  list-style-position:inside;
+  margin:0;
+  padding:0; 
+}
+
 /*
 @media (prefers-color-scheme: dark) {
   html {

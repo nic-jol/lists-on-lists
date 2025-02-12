@@ -17,13 +17,13 @@ const StringList = (props: StringListProps): ReactElement => {
                 {
                     items && !!items.length && items.map((item: string) => {
                         return (
-                            <li key={item}>{item}</li>
+                            <li className={styles.listItem} key={item}>{item}</li>
                         )
                     })
                 }
             </ul>
             <form onSubmit={props.addToList}>
-                <label >
+                <label className={styles.newItemInputLabel}>
                     New Item:
                     <input className={styles.newItemInput} type="text" name="newItem" />
                 </label>
