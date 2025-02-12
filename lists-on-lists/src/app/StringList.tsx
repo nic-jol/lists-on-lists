@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import styles from "./page.module.css";
 
 interface StringListProps {
     items: string[];
@@ -9,7 +10,7 @@ interface StringListProps {
 
 const StringList = (props: StringListProps): ReactElement => {
     const items = props.items;
-    
+
     return (
         <>
             <ul>
@@ -22,11 +23,11 @@ const StringList = (props: StringListProps): ReactElement => {
                 }
             </ul>
             <form onSubmit={props.addToList}>
-                <label>
+                <label >
                     New Item:
-                    <input type="text" name="newItem" />
+                    <input className={styles.newItemInput} type="text" name="newItem" />
                 </label>
-                <input type="submit" />
+                <input className={styles.addListItemButton} type="submit" />
             </form>
 
         </>

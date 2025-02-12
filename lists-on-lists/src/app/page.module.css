@@ -65,6 +65,19 @@
   display: inline-block;
 }
 
+.newItemInput {
+  margin-right: 0.3rem;
+  margin-left: 1rem;
+}
+
+.addListItemButton {
+  margin: 0.3rem;
+  padding: 0.3rem;
+  background-color:darkcyan;
+  border-color: #c9fdff;
+  color: #c9fdff;
+}
+
 /*@media (prefers-color-scheme: dark) {
   .page {
     --gray-rgb: 255, 255, 255;
