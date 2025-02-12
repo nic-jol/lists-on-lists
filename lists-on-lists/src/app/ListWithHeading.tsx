@@ -20,9 +20,14 @@ const ListWithHeading = (props: ListWithHeadingProps): ReactElement => {
             setItems([...items, newItem])
         }
     }
+    function removeList() {
+        //idk
+    }
 
     return <div className={styles.column}>
-        <h2>{props.heading}</h2>
+        <h2 className={styles.listHeading}>{props.heading}</h2>
+        <button onClick={removeList} className={styles.removeListButton}>X</button>
+        
         <StringList
             items={items}
             addToList={addToItemList} />

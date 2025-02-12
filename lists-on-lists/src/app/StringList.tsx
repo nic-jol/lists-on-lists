@@ -9,7 +9,7 @@ interface StringListProps {
 
 const StringList = (props: StringListProps): ReactElement => {
     const items = props.items;
-    console.log('items.length' + items.length)
+    
     return (
         <>
             <ul>
