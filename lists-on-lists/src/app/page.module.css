@@ -68,11 +68,12 @@
 .newItemInput {
   margin-right: 0.3rem;
   margin-left: 1rem;
+  font-size: 14px;
 }
 
 .addListItemButton {
-  margin: 0.3rem;
-  padding: 0.3rem;
+  margin: 0.1rem;
+  padding: 0.1rem;
   background-color:darkcyan;
   border-color: #c9fdff;
   color: #c9fdff;
