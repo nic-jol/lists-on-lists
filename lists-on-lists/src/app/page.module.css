@@ -72,6 +72,38 @@
   color: brown;
 }
 
+.removeListItem {
+  background-color: transparent;
+  border: none;
+  color: brown;
+  float: right;
+  font-weight: bold;
+  transition-duration: 0.4s;
+}
+
+.removeListItem:hover {
+  background-color: brown; 
+  color: #c9fdff;
+  font-weight: bold;
+  padding: 0.1rem;
+}
+
+.reorderListItem {
+  background-color: transparent;
+  border: none;
+  color: #c9fdff;
+  float: left;
+  margin-right: 0.3rem;
+  font-weight: bold;
+  transition-duration: 0.3s;
+}
+
+.reorderListItem:hover {
+  color: #231a3b;
+  font-weight: bold;
+  padding: 0.1rem;
+}
+
 .listHeading {
   display: inline-block;
   margin-left: 2.2rem;
@@ -107,7 +139,7 @@
   border-style:ridge;
   border-radius: 10px;
   margin: 1rem;
-  padding: 0.2rem;
+  padding: 0.4rem;
   padding-left: 0.5rem;
   transition-duration: 0.3s;
 }

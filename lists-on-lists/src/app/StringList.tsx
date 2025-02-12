@@ -17,7 +17,10 @@ const StringList = (props: StringListProps): ReactElement => {
                 {
                     items && !!items.length && items.map((item: string) => {
                         return (
-                            <li className={styles.listItem} key={item}>{item}</li>
+                            <li className={styles.listItem} key={item}>{item}
+                            <button className={styles.reorderListItem}>☰</button>
+                                <button className={styles.removeListItem}>X</button>
+                            </li>
                         )
                     })
                 }
