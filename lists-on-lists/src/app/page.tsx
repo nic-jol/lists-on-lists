@@ -7,9 +7,9 @@ import StringList from "./StringList";
 
 
 export default function Home() {
-    const [movies, setMovies] = useState(['Mamma Mia', 'Carol', 'But I\'m a Cheerleader'])
-    const [televisionShows, setTelevisionShows] = useState(['Pushing Daisies', 'Elsbeth', 'Murdoch Mysteries'])
-    const [videoGames, setVideoGames] = useState(['Journey', 'Stardew Valley', 'Animal Crossing'])
+    const [movies, setMovies] = useState<String[]>([])
+    const [televisionShows, setTelevisionShows] = useState<String[]>([])
+    const [videoGames, setVideoGames] = useState<String[]>([])
 
     function addToMovieList(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
