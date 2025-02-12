@@ -11,18 +11,24 @@ export default function Home() {
     const [televisionShows, setTelevisionShows] = useState(['Pushing Daisies', 'Elsbeth', 'Murdoch Mysteries'])
     const [videoGames, setVideoGames] = useState(['Journey', 'Stardew Valley', 'Animal Crossing'])
 
-    function addToMovieList(){
-        const newMovie = 'Superhero Movie #' + movies.length
+    function addToMovieList(event: React.FormEvent<HTMLFormElement>){
+        event.preventDefault();
+        const newMovie = (event.currentTarget[0] as HTMLInputElement).value;
+        (event.currentTarget[0] as HTMLInputElement).value = '';
         setMovies([...movies, newMovie])
     }
 
-    function addToTvList(){
-        const newTelevisionShow = 'Cop Show #' + televisionShows.length
+    function addToTvList(event: React.FormEvent<HTMLFormElement>){
+        event.preventDefault();
+        const newTelevisionShow = (event.currentTarget[0] as HTMLInputElement).value;
+        (event.currentTarget[0] as HTMLInputElement).value = '';
         setTelevisionShows([...televisionShows, newTelevisionShow])
     }
 
-    function addToVideoGamesList(){
-        const newVideoGame = 'Halo ' + videoGames.length
+    function addToVideoGamesList(event: React.FormEvent<HTMLFormElement>){
+        event.preventDefault();
+        const newVideoGame = (event.currentTarget[0] as HTMLInputElement).value;
+        (event.currentTarget[0] as HTMLInputElement).value = '';
         setVideoGames([...videoGames, newVideoGame])
     }
 

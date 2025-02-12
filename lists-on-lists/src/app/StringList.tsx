@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 interface StringListProps {
     items: string[];
-    addToList: () => void
+    addToList: (event: React.FormEvent<HTMLFormElement>) => void
 }
 
 
@@ -21,7 +21,14 @@ const StringList = (props: StringListProps): ReactElement => {
                     })
                 }
             </ul>
-            <button onClick={props.addToList}>Add Item</button>
+            <form onSubmit={props.addToList}>
+                <label>
+                    New Item:
+                    <input type="text" name="newItem" />
+                </label>
+                <input type="submit" />
+            </form>
+
         </>
     );
 }
