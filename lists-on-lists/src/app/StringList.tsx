@@ -1,12 +1,12 @@
-import { ReactElement } from "react";
+import { ReactElement, useCallback } from "react";
 import styles from "./page.module.css";
+import ListItem from "./ListItem";
 
 interface StringListProps {
     items: string[];
-    addToList: (event: React.FormEvent<HTMLFormElement>) => void
+    addToList: (event: React.FormEvent<HTMLFormElement>) => void;
+    removeItemFromList: (id: string) => void;
 }
-
-
 
 const StringList = (props: StringListProps): ReactElement => {
     const items = props.items;
@@ -17,10 +17,11 @@ const StringList = (props: StringListProps): ReactElement => {
                 {
                     items && !!items.length && items.map((item: string) => {
                         return (
-                            <li className={styles.listItem} key={item}>{item}
-                            <button className={styles.reorderListItem}>☰</button>
-                                <button className={styles.removeListItem}>X</button>
-                            </li>
+                            <ListItem
+                                id={String(new Date().getTime)}
+                                item={item}
+                                removeItemFromList={props.removeItemFromList}
+                            />
                         )
                     })
                 }

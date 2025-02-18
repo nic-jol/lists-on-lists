@@ -15,11 +15,19 @@ const ListWithHeading = (props: ListWithHeadingProps): ReactElement => {
         event.preventDefault();
         const newItem = (event.currentTarget[0] as HTMLInputElement).value;
 
-        if (validListItem(newItem)) {
+        const itemInListAlready = items.find(item => item === newItem);
+        if (validListItem(newItem, items)) {
             (event.currentTarget[0] as HTMLInputElement).value = '';
             setItems([...items, newItem])
+        } else if (itemInListAlready) {
+            alert("Cannot add duplicate items to a list.")
         }
     }
+
+    function removeItemFromList(itemToRemove: string) {
+        setItems(items.filter(item => item !== itemToRemove));
+    }
+
     function removeList() {
         //idk
     }
@@ -29,7 +37,8 @@ const ListWithHeading = (props: ListWithHeadingProps): ReactElement => {
         <button onClick={removeList} className={styles.removeListButton}>X</button>
         <StringList
             items={items}
-            addToList={addToItemList} />
+            addToList={addToItemList} 
+            removeItemFromList={removeItemFromList}/>
     </div>;
 }
 
