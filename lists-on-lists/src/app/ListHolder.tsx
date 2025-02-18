@@ -2,20 +2,24 @@ import { ReactElement } from "react";
 import ListWithHeading from "./ListWithHeading";
 
 interface ListHolderProps {
-    lists: typeof ListWithHeading[];
+    headings: string[];
+    removeList: (listToRemove: string) => void;
 }
 
 const ListHolder = (props: ListHolderProps): ReactElement => {
-    const lists = props.lists;
+    const headings = props.headings;
 
     return (
         <>
             {
-                lists && !!lists.length && lists.map((listHeading: typeof ListWithHeading) => {
-                    return ListWithHeading;
+                headings && !!headings.length && headings.map((listHeading: string) => {
+                    return <ListWithHeading 
+                        heading={listHeading}
+                        removeList={props.removeList}
+                    />;
                 })
             }
-        </>
+</>
     );
 
 }

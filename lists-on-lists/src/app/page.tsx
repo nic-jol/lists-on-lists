@@ -1,16 +1,23 @@
 'use client';
 
 import styles from "./page.module.css";
-import ListWithHeading from "./ListWithHeading";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import ListHolder from "./ListHolder";
 
 
 export default function Home() {
-    const [lists, setLists] = useState<typeof ListWithHeading[]>([])
+    const [lists, setLists] = useState<string[]>(["Movies", "Television Shows","Video Games"])
 
-    function addNewList() {
-        setLists([])
+    function addNewList(newList: string) {
+        setLists([...lists, newList])
     }
+
+    function removeList(listToRemove: string) {
+        setLists(lists.filter(listHeading => listHeading !== listToRemove))
+    }
+    const addNewListClickHandler = useCallback(() => {
+        // addNewList(props.item);
+      }, []);
 
 
     return (
@@ -20,18 +27,14 @@ export default function Home() {
 
             </div>
             <div>
-                <button onClick={addNewList} className={styles.addListButton}>Add List</button>
+                <button onClick={addNewListClickHandler} className={styles.addListButton}>Add List</button>
             </div>
             <div>
-                <ListWithHeading
-                    heading='Movies'
+                <ListHolder 
+                    headings={lists}
+                    removeList = {removeList}
                 />
-                <ListWithHeading
-                    heading='Television Shows'
-                />
-                <ListWithHeading
-                    heading='Video Games'
-                />
+
             </div>
 
         </div>

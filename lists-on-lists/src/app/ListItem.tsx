@@ -8,14 +8,14 @@ interface ListItemProps {
 }
 
 const ListItem = (props: ListItemProps):ReactElement => {
-    const clickHandler = useCallback(() => {
+    const removeListItemClickHandler = useCallback(() => {
         props.removeItemFromList(props.item);
       }, [props.item, props.removeItemFromList]);
 
     return (
             <li className={styles.listItem} key={props.id}>{props.item}
                 <button className={styles.reorderListItem}>☰</button>
-                <button className={styles.removeListItem} onClick={clickHandler}>X</button>
+                <button className={styles.removeListItem} onClick={removeListItemClickHandler}>X</button>
             </li>
     );
 

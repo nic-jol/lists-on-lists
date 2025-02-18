@@ -1,10 +1,11 @@
-import { useState, ReactElement } from "react";
+import { useState, ReactElement, useCallback } from "react";
 import StringList from "./StringList";
 import styles from "./page.module.css";
 import validListItem from "./listItemValidator";
 
 interface ListWithHeadingProps {
     heading: string;
+    removeList: (listToRemove: string) => void;
 }
 
 
@@ -28,13 +29,17 @@ const ListWithHeading = (props: ListWithHeadingProps): ReactElement => {
         setItems(items.filter(item => item !== itemToRemove));
     }
 
+    const removeListClickHandler = useCallback(() => {
+            props.removeList(props.heading);
+    }, [props.heading, props.removeList]);
+
     function removeList() {
         //idk
     }
 
     return <div className={styles.column}>
         <h2 className={styles.listHeading}>{props.heading}</h2>
-        <button onClick={removeList} className={styles.removeListButton}>X</button>
+        <button onClick={removeListClickHandler} className={styles.removeListButton}>X</button>
         <StringList
             items={items}
             addToList={addToItemList} 
