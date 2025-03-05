@@ -14,7 +14,7 @@ export default function Home() {
 
     function removeList(listToRemove: string) {
         setLists(lists.filter(listHeading => listHeading !== listToRemove))
-    }
+    } 
     const addNewListClickHandler = useCallback(() => {
         // addNewList(props.item);
       }, []);
@@ -24,7 +24,6 @@ export default function Home() {
         <div>
             <div className={styles.pageHeader}>
                 <h1>Lists on Lists</h1>
-
             </div>
             <div>
                 <button onClick={addNewListClickHandler} className={styles.addListButton}>Add List</button>
