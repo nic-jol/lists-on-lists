@@ -10,15 +10,17 @@ interface StringListProps {
 
 const StringList = (props: StringListProps): ReactElement => {
     const items = props.items;
+    const getKey = useCallback((date:string, id: string) => encodeURI(`${date},${id}`), [])
 
     return (
         <>
             <ul>
                 {
-                    items && !!items.length && items.map((item: string) => {
+                    items && !!items.length && items.map((item: string, index: number) => {
                         return (
                             <ListItem
-                                id={String(new Date().getTime)}
+                                key={getKey(new Date().toUTCString(), String(index))}
+                                id={String(index)}
                                 item={item}
                                 removeItemFromList={props.removeItemFromList}
                             />
