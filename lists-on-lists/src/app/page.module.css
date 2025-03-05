@@ -119,6 +119,38 @@
   margin-left: 2.2rem;
 }
 
+.newListLabel{
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+  font-size: 20px;
+}
+
+.submitListHeadingButton{
+  margin: 0 0.3rem 2rem 0.3rem;
+  padding:0.2rem;
+  font-size: 16px;
+  background-color:darkcyan;
+  border-color: #c9fdff;
+  color: #c9fdff;
+  transition-duration: 0.4s;
+}
+
+.submitListHeadingButton:hover{
+  background-color: #c9fdff;
+  color: darkcyan;
+}
+
+.newListInput {
+  margin: 2rem 0rem 2rem 1rem;
+  font-size: 20px;
+}
+
+.newListForm{
+  margin: 2rem;
+  background-color: rgba(201, 253, 255, 0.5); /* darkcyan with 50% opacity */
+  width: 30%;
+}
+
 .addListItemButton {
   margin: 0.1rem;
   padding: 0.1rem;
